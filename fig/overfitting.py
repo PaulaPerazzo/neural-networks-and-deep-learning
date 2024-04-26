@@ -10,6 +10,8 @@ import json
 import random
 import sys
 
+from symbol import eval_input
+
 # My library
 sys.path.append('../src/')
 import mnist_loader
@@ -159,20 +161,20 @@ def plot_overlay(test_accuracy, training_accuracy, num_epochs, xmin,
     plt.show()
 
 if __name__ == "__main__":
-    filename = raw_input("Enter a file name: ")
-    num_epochs = int(raw_input(
+    filename = eval_input("Enter a file name: ")
+    num_epochs = int(eval_input(
         "Enter the number of epochs to run for: "))
-    training_cost_xmin = int(raw_input(
+    training_cost_xmin = int(eval_input(
         "training_cost_xmin (suggest 200): "))
-    test_accuracy_xmin = int(raw_input(
+    test_accuracy_xmin = int(eval_input(
         "test_accuracy_xmin (suggest 200): "))
-    test_cost_xmin = int(raw_input(
+    test_cost_xmin = int(eval_input(
         "test_cost_xmin (suggest 0): "))
-    training_accuracy_xmin = int(raw_input(
+    training_accuracy_xmin = int(eval_input(
         "training_accuracy_xmin (suggest 0): "))
-    training_set_size = int(raw_input(
+    training_set_size = int(eval_input(
         "Training set size (suggest 1000): "))
-    lmbda = float(raw_input(
+    lmbda = float(eval_input(
         "Enter the regularization parameter, lambda (suggest: 5.0): "))
     main(filename, num_epochs, training_cost_xmin, 
          test_accuracy_xmin, test_cost_xmin, training_accuracy_xmin,

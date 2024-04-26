@@ -33,11 +33,11 @@ def make_data_integer(td):
 data = {"training": [
     {"x": [x[0] for x in training_data[j][0].tolist()],
      "y": [y[0] for y in training_data[j][1].tolist()]}
-    for j in xrange(NTD)],
+    for j in range(NTD)],
         "validation": [
     {"x": [x[0] for x in validation_data[j][0].tolist()],
      "y": validation_data[j][1]}
-            for j in xrange(NVD)]}
+            for j in range(NVD)]}
 
 f = open("data_1000.json", "w")
 json.dump(data, f)
